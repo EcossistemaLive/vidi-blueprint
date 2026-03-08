@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViDi — Blueprint de Aceleração</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="animate">
+            <p class="gold-text" style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Ecossistema Live — Mentoria de Elite</p>
+            <h1>ViDi Blueprint</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">
+                A ciência da aceleração aplicada à mentoria de líderes e CEOs. Da análise de mercado ao sistema de maturação de alta escala.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">01. Análise Reversa: O Modelo Liven</h2>
+        <p style="margin-bottom: 30px; color: var(--text-secondary);">
+            Identificamos o padrão de "Autoconhecimento Percebido" do <span class="gold-text">quiz.theliven.com</span>. Enquanto eles focam na conversão comercial rápida, nosso blueprint foca na <span class="gold-text">Maturação Íntegra</span>.
+        </p>
+        <div class="card-grid">
+            <div class="card animate">
+                <h3>O Gatilho</h3>
+                <p>Uso de triagens reais (ADHD, DASS-21) para gerar autoridade imediata e conexão psicológica.</p>
+            </div>
+            <div class="card animate">
+                <h3>A Escala</h3>
+                <p>Funil otimizado para transformar dor em assinatura através de micro-validações constantes.</p>
+            </div>
+            <div class="card animate">
+                <h3>A Lição</h3>
+                <p>O valor não está no quiz, mas no <span class="gold-text">Sistema de Diagnóstico Percebido</span> que educa o lead.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: rgba(15, 28, 46, 0.3);">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">02. O Novo Sistema de Diagnóstico</h2>
+        <div class="blueprint-step animate">
+            <h3 style="color: var(--accent-gold);">Nível 1: Captação de Dores Pragmáticas</h3>
+            <p style="color: var(--text-secondary);">Foco em problemas imediatos de gestão: "Sua equipe depende de você?"</p>
+        </div>
+        <div class="blueprint-step animate">
+            <h3 style="color: var(--accent-gold);">Nível 2: Profundidade Antropológica</h3>
+            <p style="color: var(--text-secondary);">Integração dos <span class="gold-text">4 Temperamentos</span> e as <span class="gold-text">12 Camadas da Personalidade</span> para um diagnóstico que o mercado de massa não consegue replicar.</p>
+        </div>
+        <div class="blueprint-step animate">
+            <h3 style="color: var(--accent-gold);">Nível 3: Saída Estratégica</h3>
+            <p style="color: var(--text-secondary);">Score final baseado em 5 eixos: Nível de Dor, Prontidão, Gaps Gerenciais, Fit Executivo e o Ponto Cego.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="card" style="text-align: center; border: 1px solid var(--accent-gold);">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.22rem; margin-bottom: 20px;">Próximo Passo: Posicionamento ViDi</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                "O CEO Catalisador acelera as reações sem se consumir no processo."
+            </p>
+            <p class="gold-text">Veni, Vidi, Vici.</p>
+        </div>
+    </section>
+
+    <footer style="padding: 50px; text-align: center; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-secondary);">
+        &copy; 2026 Ecossistema Live &bull; Projeto ViDi &bull; Powered by AntiGravity
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.animate');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>

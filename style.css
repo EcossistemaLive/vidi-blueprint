@@ -1,0 +1,110 @@
+:root {
+    --bg-deep: #05070a;
+    --bg-card: rgba(10, 20, 35, 0.85);
+    --accent-gold: #c5a059;
+    --accent-gold-dim: rgba(197, 160, 89, 0.15);
+    --accent-blue: #0f1c2e;
+    --text-main: #e8e8e8;
+    --text-secondary: #9a9faa;
+    --text-gold: #e2c882;
+    --border-subtle: rgba(197, 160, 89, 0.12);
+    --border-gold: rgba(197, 160, 89, 0.35);
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, var(--accent-blue) 0%, var(--bg-deep) 100%);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 100px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 40px;
+    border-radius: 20px;
+    transition: all 0.4s var(--ease);
+}
+
+.card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+.gold-text {
+    color: var(--text-gold);
+    font-weight: 600;
+}
+
+.blueprint-step {
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.blueprint-step::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+    animation: fadeInUp 0.8s var(--ease) forwards;
+}
