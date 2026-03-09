@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Estratégica - Live Consultoria V6.0</title>
+    <title>Apresentação Estratégica - Operação Cúpula CEO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* 1. THE SETUP & V6.0 TOKENS */
@@ -31,196 +28,183 @@
 
         * {
             box-sizing: border-box;
-        }
-
-        p {
-            margin: 0;
-            margin-bottom: 15px;
-        }
-
-        /* CONFIGURAÇÃO ROLAGEM VERTICAL */
-        body {
-            background-color: #030a10;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-            overflow-y: auto;
-            scroll-behavior: smooth;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
         }
 
-        .slide-wrapper {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px;
-        }
-
-        /* 1.1 SLIDE CONTAINER & ATMOSPHERE */
-        .slide-container {
-            align-items: center;
+        /* CONFIGURAÇÃO PÁGINA ÚNICA VERTICAL */
+        body {
             background-color: var(--live-deep);
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 232, 0, 0.05);
-            display: flex;
-            flex-direction: column;
+            background-attachment: fixed; /* Mantém a textura fixa durante o scroll */
+            color: #e2e8f0;
             font-family: var(--font-primary);
-            min-height: 720px;
-            justify-content: center;
-            overflow: hidden;
-            padding: 60px;
-            position: relative;
-            width: 1280px;
-            max-width: 100%;
-            border: 1px solid var(--border-subtle);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        .slide-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 50% 50%, var(--live-accent-dim) 0%, transparent 60%);
+        /* Efeito de Lanterna Fixo no Fundo */
+        .flashlight-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150vw;
+            height: 150vh;
+            background: radial-gradient(circle at 50% 50%, var(--live-accent-dim) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
 
-        .slide-container>* {
+        /* Container Principal */
+        .main-container {
             position: relative;
             z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px; /* Espaçamento generoso entre seções */
         }
 
-        /* 2. CONSISTENT TYPOGRAPHY */
-        h1,
-        h2,
-        h3 {
-            font-family: var(--font-primary);
+        /* TIPOGRAFIA */
+        h1, h2, h3, h4 {
             font-weight: 600;
-            margin: 0;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 70px;
+            font-size: 64px;
             background: var(--kinetic-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            line-height: 1.1;
             letter-spacing: -1px;
+            text-align: center;
         }
 
-        .slide-title {
-            color: var(--live-accent);
+        h2 {
             font-size: 40px;
-            margin-bottom: 40px;
-            text-align: left;
-            width: 100%;
+            color: var(--live-accent);
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
+            font-size: 24px;
             color: #ffffff;
         }
 
-        p,
-        li,
-        .subtitle,
-        th,
-        td,
-        .number-label {
-            color: #e2e8f0;
-            font-family: var(--font-primary);
+        p {
             font-size: 18px;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #cbd5e1;
         }
 
         .subtitle {
-            font-size: 24px;
-            font-weight: 400;
-            margin: 20px auto;
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
             color: #a0aec0;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
         }
 
-        .content-area {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: center;
-            width: 100%;
+        .analytical-text {
+            font-family: var(--font-analytical);
+            font-size: 17px;
+            line-height: 1.8;
+            color: #cbd5e1;
         }
 
+        /* COMPONENTES V6.0 */
         .glass-panel {
             background: var(--live-glass);
             backdrop-filter: var(--glass-blur);
             border: 1px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 40px;
-            transition: transform 400ms var(--spring-bounce), border-color 400ms var(--ease-fluid);
+            padding: 50px;
+            transition: transform 400ms var(--spring-bounce), border-color 400ms var(--ease-fluid), box-shadow 400ms;
         }
 
-        /* 3. LAYOUT DEFINITIONS */
-        .title-layout {
+        .glass-panel:hover {
+            border-color: var(--border-active);
+            box-shadow: 0 10px 40px rgba(0, 232, 0, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .hero-section {
             text-align: center;
-            max-width: 900px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .section-title-layout {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-        }
-
-        .section-title-layout h2 {
-            font-size: 60px;
-            margin-bottom: 20px;
-            background: var(--kinetic-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-title-layout hr {
-            background-color: var(--live-accent);
-            border: none;
-            height: 4px;
-            margin: 30px auto;
-            width: 120px;
-            border-radius: 2px;
-        }
-
-        .two-column {
-            align-items: center;
+        /* GRIDS & LAYOUTS */
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            width: 100%;
+            gap: 40px;
         }
 
-        .two-column ul {
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .icon-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .icon-box i {
+            font-size: 32px;
+            color: var(--live-accent);
+            text-shadow: 0 0 15px var(--live-accent-dim);
+        }
+
+        /* DESTAQUE DE NÚMEROS */
+        .metric-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 232, 0, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .metric-card .number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--live-accent);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .metric-card .label {
+            font-size: 16px;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* LISTAS CUSTOMIZADAS */
+        ul.custom-list {
             list-style: none;
-            margin: 0;
-            padding: 0;
         }
 
-        .two-column li {
-            margin-bottom: 20px;
-            padding-left: 30px;
+        ul.custom-list li {
             position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
         }
 
-        .two-column li::before {
+        ul.custom-list li::before {
             content: '▹';
             color: var(--live-accent);
             position: absolute;
@@ -229,484 +213,172 @@
             top: -2px;
         }
 
-        .image-wrapper {
-            background: var(--live-glass);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            height: 380px;
-            max-width: 100%;
-            overflow: hidden;
-            width: 100%;
-            padding: 10px;
-        }
-
-        .image-wrapper img {
-            border-radius: 8px;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .two-column.tiled {
-            align-items: stretch;
-        }
-
-        .two-column.tiled>div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .tiled-content {
-            align-items: stretch;
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .tile {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            justify-content: flex-start;
+        /* FOOTER */
+        footer {
             text-align: center;
-        }
-
-        .tile .icon {
-            color: var(--live-accent);
-            font-size: 50px;
-            margin-bottom: 25px;
-            text-shadow: 0 0 20px var(--live-accent-dim);
-        }
-
-        .table-layout {
-            width: 100%;
-            background: var(--live-glass);
-            backdrop-filter: var(--glass-blur);
-            border-radius: 16px;
-            border: 1px solid var(--border-subtle);
-            overflow: hidden;
-        }
-
-        .table-layout table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .table-layout th,
-        .table-layout td {
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 22px 30px;
-            text-align: left;
-        }
-
-        .table-layout th {
-            background-color: rgba(0, 232, 0, 0.05);
-            color: var(--live-accent);
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .table-layout tr:last-child td {
-            border-bottom: none;
-        }
-
-        .highlight-numbers-layout {
-            align-items: center;
-        }
-
-        .highlight-numbers-layout>div:first-child {
-            flex: 0 0 45%;
-            text-align: center;
-        }
-
-        .highlight-numbers-layout .number {
-            color: var(--live-accent);
-            font-size: 140px;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
-
-        .highlight-numbers-layout .number-label {
-            font-size: 26px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-top: -10px;
-        }
-
-        .timeline-layout {
-            align-items: stretch;
-            display: flex;
-            height: stretch;
-            justify-content: space-between;
-            position: relative;
-            width: 100%;
+            padding: 60px 0 20px 0;
+            border-top: 1px solid var(--border-subtle);
             margin-top: 40px;
         }
 
-        .timeline-layout .timeline-line {
-            background-color: var(--border-subtle);
-            height: 4px;
-            left: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-2px);
-            width: 100%;
-            z-index: 0;
-        }
-
-        .timeline-item {
-            position: relative;
-            text-align: center;
-            width: 23%;
-        }
-
-        .timeline-item::after {
-            background-color: var(--live-deep);
-            border-radius: 50%;
-            border: 4px solid var(--live-accent);
-            content: '';
-            height: 24px;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 24px;
-            z-index: 1;
-            box-shadow: 0 0 15px var(--live-accent-dim);
-        }
-
-        .timeline-item .content-wrapper {
-            left: 0;
-            position: absolute;
-            width: 100%;
-        }
-
-        .timeline-item:nth-child(odd) .content-wrapper {
-            bottom: 50%;
-            margin-bottom: 35px;
-        }
-
-        .timeline-item:nth-child(even) .content-wrapper {
-            margin-top: 35px;
-            top: 50%;
-        }
-
-        .timeline-item h3 {
+        footer .powered {
             color: var(--live-accent);
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .timeline-item p {
-            font-size: 16px;
-            color: #a0aec0;
-        }
-
-        .qa-layout {
-            margin: 0 auto;
-            text-align: center;
-            width: 100%;
-            align-self: center;
-        }
-
-        .qa-layout h2 {
-            font-size: 70px;
-            margin-bottom: 20px;
-            background: var(--kinetic-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .qa-layout p {
-            font-size: 26px;
-            color: #ffffff;
-        }
-
-        .qa-layout .contact-info {
-            color: var(--live-accent);
-            font-size: 20px;
-            margin-top: 60px;
             font-weight: 500;
+            font-size: 18px;
         }
 
-        .qa-layout .contact-info span {
+        footer .email {
             color: #a0aec0;
-            display: block;
-            margin-top: 5px;
-            font-size: 16px;
-        }
-
-        /* Instrução de Scroll visual */
-        .scroll-hint {
-            position: absolute;
-            bottom: 20px;
-            right: 40px;
-            color: var(--live-accent);
             font-size: 14px;
-            opacity: 0.6;
-            animation: pulse 2s infinite;
+            margin-top: 8px;
+        }
+        
+        /* Citações Analíticas */
+        blockquote {
+            border-left: 3px solid var(--live-accent);
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #94a3b8;
         }
 
-        @keyframes pulse {
-            0% {
-                opacity: 0.3;
-                transform: translateX(0);
-            }
-
-            50% {
-                opacity: 0.8;
-                transform: translateX(10px);
-            }
-
-            100% {
-                opacity: 0.3;
-                transform: translateX(0);
-            }
-        }
     </style>
 </head>
-
 <body>
 
-    <!-- Slide 1 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide1">
-            <div class="title-layout">
-                <h1>Operação Cúpula CEO</h1>
-                <p class="subtitle">Implementação do Sistema Antifrágil de Diagnóstico e Conversão<br>Padrão Live
-                    Consultoria V6.0 (Elite & AI-Driven)</p>
-            </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
+    <div class="flashlight-bg"></div>
 
-    <!-- Slide 2 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide2">
-            <div class="section-title-layout">
-                <hr>
-                <h2>O Contexto Estratégico</h2>
-                <p class="subtitle">A Nova Fronteira da Aquisição de Alto Padrão.</p>
-            </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
+    <div class="main-container">
+        
+        <!-- HERO SECTION -->
+        <header class="hero-section">
+            <h1>Operação Cúpula CEO</h1>
+            <p class="subtitle">Implementação do Sistema Antifrágil de Diagnóstico e Conversão <br> Padrão Live Consultoria V6.0 (Elite & AI-Driven)</p>
+        </header>
 
-    <!-- Slide 3 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide3">
-            <h2 class="slide-title">Cenário e Desafio</h2>
-            <div class="content-area">
-                <div class="two-column">
-                    <div>
-                        <ul>
-                            <li><strong>Meta Primária:</strong> Venda de 250 ingressos (Ticket: R$ 1.500) para o evento
-                                Cúpula CEO até o dia 09/09/2026.</li>
-                            <li><strong>Receita Alvo:</strong> R$ 375.000,00 diretos no evento.</li>
-                            <li><strong>Público-Alvo:</strong> CEOs, empresários e líderes de alta performance buscando
-                                governança, sucessão e escala.</li>
-                            <li><strong>Ascensão (Upsell):</strong> Migração do evento para mentorias premium (R$
-                                40k-70k) e consultorias anuais (R$ 290k).</li>
-                            <li><strong>O Papel do Tráfego:</strong> Não precisamos apenas de volume de cliques;
-                                precisamos de <em>qualificação diagnóstica</em> imediata.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="image-wrapper">
-                            <img src="assets/executive_meeting.png"
-                                alt="Reunião executiva de alto padrão em ambiente moderno e escuro">
-                        </div>
-                    </div>
+        <!-- STORYTELLING: A PESQUISA -->
+        <section class="glass-panel">
+            <h2><i class="fa-solid fa-magnifying-glass-chart"></i> O Gênesis: A Pesquisa Liven</h2>
+            <p class="analytical-text">
+                Nossa jornada estratégica começou com uma imersão profunda na engenharia de aquisição do aplicativo <strong>Liven (quiz.theliven.com)</strong>. Dissecamos o modelo deles e descobrimos um funil comercial brutalmente eficiente, orientado à conversão por meio de microcompromissos.
+            </p>
+            <p class="analytical-text">
+                O modelo deles atrai o usuário com um "quiz de 1 minuto" focado em autodescoberta, entrega um resultado que parece altamente personalizado e conduz a uma assinatura recorrente. 
+                A grande sacada estratégica para a Live Consultoria foi: <strong>Como adaptar essa máquina de aquisição B2C de baixo ticket para o nosso ecossistema B2B High-Ticket?</strong>
+            </p>
+            <blockquote class="analytical-text">
+                Em vez de vender uma mentoria ou ingresso de forma direta e fria, usaremos a arquitetura de "Screener Diagnóstico" para gerar clareza imediata. O empresário não compra um evento; ele compra o próximo passo de uma descoberta sobre os gargalos da própria empresa.
+            </blockquote>
+        </section>
+
+        <!-- O MOTOR DIAGNÓSTICO (CONCEITOS) -->
+        <section class="glass-panel">
+            <h2><i class="fa-solid fa-brain"></i> A Engenharia do Nosso Diagnóstico</h2>
+            <p>Diferente de questionários rasos de internet, nosso motor de qualificação cruza dados comportamentais rigorosos com nossa base filosófica e psicológica proprietária. Ele atua em 4 frentes simultâneas:</p>
+            
+            <div class="grid-2" style="margin-top: 40px;">
+                <div class="icon-box">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Comportamento Observável</h3>
+                    <p class="analytical-text">A base real do <em>Score</em>. Medimos a dependência da empresa do fundador, a cadência de execução, as horas perdidas em aprovação e a formação da segunda linha de líderes.</p>
+                </div>
+                
+                <div class="icon-box">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <h3>A Pirâmide de Maslow</h3>
+                    <p class="analytical-text">Utilizada como <strong>lente interpretativa</strong>. Mapeamos em qual faixa de tensão o líder opera hoje: sobrevivência, segurança financeira, busca por reconhecimento social ou anseio por um legado duradouro.</p>
+                </div>
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-fire-flame-simple"></i>
+                    <h3>Os 4 Temperamentos</h3>
+                    <p class="analytical-text">A base de autoconhecimento. Usamos Colérico, Sanguíneo, Fleumático e Melancólico como linguagem pedagógica para que o líder entenda seu padrão sob pressão, seu formato de cobrança e seu estilo de influência.</p>
+                </div>
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>As 12 Camadas da Personalidade</h3>
+                    <p class="analytical-text">Nosso diferencial de <strong>profundidade</strong>. É o framework definitivo para entender o líder de forma holística. Entra não no questionário rápido, mas como mapa de rota no evento presencial e na consultoria.</p>
                 </div>
             </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Slide 4 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide4">
-            <h2 class="slide-title">A Defesa Estratégica</h2>
-            <div class="content-area">
-                <div class="two-column tiled">
-                    <div class="glass-panel">
-                        <h3>UI/UX Elite (V6.0)</h3>
-                        <p>O design parou de ser apenas cosmético. A física de interface com efeitos de mola e inércia
-                            visual mantém a retenção cognitiva no Limiar de Doherty (&lt;400ms). Carregamento crítico
-                            abaixo de 50ms impede a perda de leads premium frios e reduz radicalmente o bounce rate dos
-                            anúncios.</p>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>O Motor Diagnóstico</h3>
-                        <p>Em vez de uma Landing Page vendendo "Compre o meu evento", oferecemos um diagnóstico
-                            executivo: "Descubra o gargalo da sua empresa". A conversão sobe porque o evento passa a ser
-                            a consequência natural da resolução da dor que o próprio lead mapeou no funil.</p>
-                    </div>
+        <!-- OBJETIVO DE MARKETING -->
+        <section class="glass-panel">
+            <h2><i class="fa-solid fa-crosshairs"></i> O Alvo do Tráfego: Cúpula CEO</h2>
+            <p>O marketing não otimiza por cliques baratos. Ele otimiza para encontrar os líderes que possuem a dor exata que nosso ecossistema resolve. O evento no WTC é a coroação desse funil.</p>
+            
+            <div class="grid-3" style="margin-top: 30px;">
+                <div class="metric-card">
+                    <div class="number">24/09</div>
+                    <div class="label">Data Oficial (2026)</div>
+                    <div style="color: #cbd5e1; font-size: 14px; margin-top: 10px;">WTC Goiânia</div>
+                </div>
+                <div class="metric-card">
+                    <div class="number">250</div>
+                    <div class="label">Ingressos (Meta)</div>
+                    <div style="color: #cbd5e1; font-size: 14px; margin-top: 10px;">CEOs e Líderes</div>
+                </div>
+                <div class="metric-card">
+                    <div class="number">R$ 1.5k</div>
+                    <div class="label">Ticket Médio</div>
+                    <div style="color: #cbd5e1; font-size: 14px; margin-top: 10px;">R$ 375k de Receita</div>
                 </div>
             </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
 
-    <!-- Slide 5 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide5">
-            <h2 class="slide-title">Estratégia de Funil</h2>
-            <div class="content-area">
-                <div class="tiled-content">
-                    <div class="tile glass-panel">
-                        <div class="icon"><i class="fa-solid fa-crosshairs"></i></div>
-                        <h3>1. Screener Público</h3>
-                        <p>Fase de atração com 7-10 perguntas. Foco em comportamento observável e fit rápido (dor e
-                            curiosidade). Gera o microresultado e realiza a captura do contato (Lead Gerado).</p>
-                    </div>
-                    <div class="tile glass-panel">
-                        <div class="icon"><i class="fa-solid fa-microscope"></i></div>
-                        <h3>2. Diagnóstico Profundo</h3>
-                        <p>Mapeamento de maturidade com 24 itens em 6 dimensões (Ex: Dependência do dono, Cadência
-                            gerencial). Libera um relatório executivo personalizado, ancorando nossa autoridade técnica.
-                        </p>
-                    </div>
-                    <div class="tile glass-panel">
-                        <div class="icon"><i class="fa-solid fa-ranking-star"></i></div>
-                        <h3>3. Aplicação Cúpula</h3>
-                        <p>Filtragem de intenção e urgência. Direciona os scores mais altos para concierges no WhatsApp
-                            e conduz perfis aprovados para a compra final do ingresso do evento.</p>
-                    </div>
+            <div style="margin-top: 40px;">
+                <h3>A Estratégia de Aquisição:</h3>
+                <ul class="custom-list">
+                    <li>Atrair <strong>25.000 visitantes</strong> qualificados ao topo do funil através de anúncios focados em "descubra o que trava sua empresa".</li>
+                    <li>Converter esse tráfego no <em>Screener</em> público (7 a 10 perguntas rápidas).</li>
+                    <li>Entregar um diagnóstico profundo que exige a presença no evento para resolução.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- O FORMATO DA MENTORIA (UPSELL) -->
+        <section class="glass-panel">
+            <h2><i class="fa-solid fa-arrow-trend-up"></i> O Ecossistema de Mentoria (O Verdadeiro Jogo)</h2>
+            <p>A Cúpula CEO não é o fim da linha. O evento presencial é, estrategicamente, o maior filtro de qualificação para os nossos produtos High-Ticket. O funil foi desenhado para ascensão contínua.</p>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div>
+                    <h3 style="color: var(--live-accent);">Mentorias Premium</h3>
+                    <p class="analytical-text">
+                        Acompanhamento focado na aplicação prática do modelo das 12 Camadas e estruturação da liderança antifrágil. 
+                        <br><br><strong>Ticket de Ascensão:</strong> R$ 40.000 a R$ 70.000.
+                        <br><strong>Público:</strong> Líderes que saem do evento com clareza, mas precisam de acompanhamento para mudar o modelo mental da operação.
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color: var(--live-accent);">Consultoria de Implementação</h3>
+                    <p class="analytical-text">
+                        Imersão total na cultura e nos processos da empresa. Transformamos a teoria do evento em governança corporativa profunda em um ciclo de 12 meses.
+                        <br><br><strong>Ticket Master:</strong> R$ 290.000.
+                        <br><strong>Público:</strong> CEOs e Fundadores que necessitam de intervenção estrutural, sucessão e libertação operacional imediata.
+                    </p>
                 </div>
             </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Slide 6 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide6">
-            <h2 class="slide-title">Comparativo de Modelos</h2>
-            <div class="content-area">
-                <div class="table-layout">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Elemento Operacional</th>
-                                <th>Padrão Anterior (Mercado)</th>
-                                <th>Sistema Elite V6.0 + Funil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Fricção de Venda</strong></td>
-                                <td>Anúncio direto para o Checkout</td>
-                                <td>Aquecimento via microcompromissos lógicos</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Interface (UI)</strong></td>
-                                <td>Páginas estáticas, chapadas e lentas</td>
-                                <td>Cinética, adaptável, FCP &lt; 50ms, Glassmorphism</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Ação do Lead</strong></td>
-                                <td>Passiva (Leitura vertical extensa)</td>
-                                <td>Ativa e Iterativa (Descoberta sobre si mesmo)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Qualidade de Dados</strong></td>
-                                <td>Apenas Nome e E-mail capturados</td>
-                                <td>Coleta de Fit Comercial, Dor, Maturidade e Intenção</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
+        <!-- DEFESA UI/UX V6.0 -->
+        <section class="glass-panel">
+            <h2><i class="fa-solid fa-code"></i> Defesa Técnica: Por que a V6.0 converte mais?</h2>
+            <p>Toda essa engenharia psicológica morre se a página for lenta. O Padrão Elite (V6.0) entra para garantir a retenção cognitiva.</p>
+            <ul class="custom-list">
+                <li><strong>O Limiar de Doherty:</strong> Interfaces que reagem em menos de 400ms prendem a atenção. Nosso carregamento inicial (FCP) é inferior a 50ms.</li>
+                <li><strong>Refractive Glass & Física:</strong> Botões com peso e inércia (efeito mola) tornam a interação tátil, simulando exclusividade no digital.</li>
+                <li><strong>Personalização Dinâmica:</strong> Se o usuário executa leitura lenta, a tipografia transita para <em>Merriweather (Serif)</em> para ancorar atenção em textos analíticos profundos.</li>
+            </ul>
+        </section>
 
-    <!-- Slide 7 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide7">
-            <h2 class="slide-title">Projeções Comerciais</h2>
-            <div class="content-area">
-                <div class="two-column highlight-numbers-layout">
-                    <div>
-                        <div class="number">25k</div>
-                        <div class="number-label">Visitantes Topo de Funil</div>
-                    </div>
-                    <div class="glass-panel">
-                        <h3>Matemática da Conversão (1%)</h3>
-                        <p>Com um ticket high-end (R$ 1.500) e uma jornada multifacetada, operaremos com uma meta de
-                            conversão rigorosa e realista de aproximadamente 1% do tráfego qualificado que inicia o
-                            processo.</p>
-                        <p>O foco do tráfego é encontrar 25.000 líderes que possuam o fit exato com a nossa persona para
-                            garantir os <strong>250 ingressos</strong> e retroalimentar a base do time de vendas para os
-                            upsells de R$ 290k.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-hint">Role para baixo <i class="fa-solid fa-arrow-down"></i></div>
-        </div>
-    </div>
+        <!-- FOOTER -->
+        <footer>
+            <div class="powered">₢ Powered by Cléber Donato</div>
+            <div class="email">Consultor de Negócios & Estratégia B2B | Goiânia, GO</div>
+        </footer>
 
-    <!-- Slide 8 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide8">
-            <h2 class="slide-title">Plano Passo a Passo</h2>
-            <div class="content-area">
-                <div class="timeline-layout">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-item">
-                        <div class="content-wrapper">
-                            <h3>Fase 1: Validação</h3>
-                            <p>Até 31/05/2026</p>
-                            <p>A/B test de copys, dores principais e UX do quiz. Meta: 50 ingressos.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="content-wrapper">
-                            <h3>Fase 2: Escala</h3>
-                            <p>Até 30/06/2026</p>
-                            <p>Escalar o investimento nos segmentos e criativos vencedores. Meta: 100 ingressos.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="content-wrapper">
-                            <h3>Fase 3: Aceleração</h3>
-                            <p>Até 31/07/2026</p>
-                            <p>Otimização de ROAS agressiva em topo e meio de funil. Meta: 160 ingressos.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="content-wrapper">
-                            <h3>Fase 4: Sold Out</h3>
-                            <p>Até 09/09/2026</p>
-                            <p>Retargeting de fechamento em leads com score A e B. Meta final: 250 ingressos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-hint">Role para o lado <i class="fa-solid fa-arrow-right"></i></div>
-        </div>
     </div>
-
-    <!-- Slide 9 -->
-    <div class="slide-wrapper">
-        <div class="slide-container" id="slide9">
-            <div class="qa-layout">
-                <h2>Prontos para Executar?</h2>
-                <p>O design é comportamento. A conversão é consequência.</p>
-                <div class="contact-info">
-                    ₢ Powered by Cléber Donato
-                    <span>cleberdonato@ecossistemalive.com.br</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 </body>
-
 </html>
